@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cara-Li Farrell Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/4c953ed16d.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" class="logo">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-text">
+                <p>Business Analytics & Finance Student @McGill University</p>
+                <h1>Hi, I'm <span>Cara-Li</span> Farrell<br>from Montreal</h1>
+            </div>
+        </div>
+    </div>
+    <!----------------------------about---------------------------->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/user.png">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>I am a second-year student at McGill University's Desautels Faculty of Management 
+                        majoring in Business Analytics and concentrating in Finance.
+                    </p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Python</span><br>Basics, data manipulation with Pandas & other modules</li>
+                            <li><span>Gurobi Optimization</span><br>Mathematical modelling and optimization</li>
+                            <li><span>SQL</span><br>Basic databse queries</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>MGCR 331 (Information Systems) Grader @McGill University</span><br>August 2022 - December 2022</li>
+                            <li><span>Web Marketing Generalist @Lifter Web Marketing</span><br>July 2021 - Present</li>
+                            <li><span>Online Merchandiser @Faema Montreal</span><br>June 2021 - Present</li>
+                            <li><span>Bilingual Operations Officer @RBC</span><br>May 2022 - August 2022</li>
+                            <li><span>Sales & Marketing Intern @Bidgala</span><br>February 2021 - June 2021</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>McGill University, Desautels Faculty of Management, Bachelor of Commerce</span><br>2021 - Present</li>
+                            <li><span>Dawson College, DEC</span><br>2019 - 2021</li>
+                            <li><span>Collège Sainte-Anne, High School Diploma</span><br>2014 - 2019</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!----------------------------portfolio---------------------------->
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">My Projects</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="images/work-1.png">
+                    <div class="layer">
+                        <h3>#100DaysOfCode Challenge</h3>
+                        <p>View all the projects I am working on to complete the 100 Days of Code Bootcamp on Udemy taught by Dr. Angela Yu</p>
+                        <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/work-2.png">
+                    <div class="layer">
+                        <h3>Meme Stock Regression Analysis</h3>
+                        <p>In progress...</p>
+                        <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="btn">See more</a>
+        </div>
+    </div>
+    <!----------------------------contact---------------------------->
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+</script>
+
+</body>
+</html>

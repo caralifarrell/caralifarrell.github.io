@@ -37,8 +37,10 @@
                 </div>
                 <div class="about-col-2">
                     <h1 class="sub-title">About Me</h1>
-                    <p>I am a second-year student at McGill University's Desautels Faculty of Management 
-                        majoring in Business Analytics and concentrating in Finance.
+                    <p>Hello there! I'm Cara-Li, a second-year student at McGill University's Desautels Faculty of Management 
+                        majoring in Business Analytics and concentrating in Finance. I'm a quick learner, a self-starter and a bookworm.
+                        I'm currently taking online courses and tutorials to enhance my coding skills and learn new softwares, and I'm enjoying every bit of it. 
+                        I'm particularly interested in the applications of analytics and Python in Finance and I'm eager to grow and improve my skills.
                     </p>
                     <div class="tab-titles">
                         <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
@@ -135,6 +137,7 @@
                     <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
                     <button type="submit" class="btn btn2">Submit</button>
                 </form>
+                <span id="msg"></span>
             </div>
         </div>
     </div>
@@ -174,13 +177,21 @@
 
 </script>
 <script>
-    const scriptURL = '<https://script.google.com/macros/s/AKfycby2rZC9BlZZW7sVHsfBCkeYGrNtIp0k9l2Mn5XZdgri_MILv8iO3aWE8UEfq7OjMh015Q/exec>'
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwenaXMBx5wc9DYiVsFTCutsaQZszGpDNhLskZDi796qwfDZtWPIS_Fq_vhqzYoO089Lg/exec'
     const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
   
     form.addEventListener('submit', e => {
       e.preventDefault()
       fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => console.log('Success!', response))
+        .then(response => {
+            msg.innerHTML = "Message sent successfully"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+
+        })
         .catch(error => console.error('Error!', error.message))
     })
   </script>
